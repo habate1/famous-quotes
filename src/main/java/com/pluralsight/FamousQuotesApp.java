@@ -6,7 +6,7 @@ public class FamousQuotesApp {
     public static void main(String[] args) {
         Scanner myscanner = new Scanner(System.in);
 
-
+    try {
         // create an array of 10 quotes
         String[] quotes = {"Be yourself", "Keep going", "Stay curious",
                 "Less is more", "Do it now", "Dream big", "Choose joy", "Start small",
@@ -18,6 +18,9 @@ public class FamousQuotesApp {
         input--;
         System.out.println("Quote of the Day:");
         System.out.println(quotes[input]);
-
+    } catch (RuntimeException e) {
+        System.out.println("Your number was out of range!");
+        System.out.println(e.getMessage());
+    }
     }
 }
